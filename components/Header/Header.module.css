@@ -1,0 +1,36 @@
+
+.headerContainer {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-self: center;
+   
+    background-color: #444C2A;
+    
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 50px;
+
+    nav {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        padding-bottom: 10px;
+        gap: 4rem;
+        width: 90%;
+        border-bottom: 1px solid white;
+    }
+    
+    a {
+        color: white;
+        font-family: var(--font-inter);
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    a:hover {
+        transform: scale(1.05);
+    }
+}

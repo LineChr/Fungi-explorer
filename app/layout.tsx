@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import Header from "@/components/Header/Header";
+import { Chicle, Inter } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const chicle = Chicle({
   subsets: ["latin"],
+  variable: "--font-chicle",
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,8 +23,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="en">
+      <body className={`${inter.variable} ${chicle.variable}`}>
+        <div className="app-container"> 
+
+          <div className="side side-left">
+            <Image src="/background_leaves.png" alt="" width={390} height={1000} priority/>
+          </div>
+
+          <div className="content-container">
+            <Header/>
+            <main>{children}</main>
+          </div>
+
+          <div className="side side-right">
+            <Image src="/background_leaves.png" alt="" width={390} height={1000} priority/>
+          </div>
+
+        </div>
+      </body>
     </html>
   );
 }
