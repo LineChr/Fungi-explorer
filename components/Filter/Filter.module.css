@@ -1,0 +1,59 @@
+.filterContainer {
+    display: flex;
+    padding: 20px 0 20px 0;
+    width: 90%;
+    margin: 0 auto;  
+    gap: 20px;
+}
+
+.alphabetFilter {
+        width: 45px;
+        height: 45px;
+        background-color: #9F3D3D;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+
+    img {
+        margin: 0 auto;
+        width: 35px;
+        height: 35px;
+        display: block;
+        filter: invert(1);
+    }
+}
+
+.searchFilter {
+    display: flex;
+        width: 300px;
+        height: 45px;
+        background-color: #1C1818;
+        border-radius: 12px;
+        box-sizing: border-box;
+        padding: 10px;
+
+        &:focus-within {
+            outline: 2px solid #9F3D3D;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+            filter: invert(1);
+        }
+
+        input {
+            border: none;
+            font-size: 1.2rem;
+            outline: none;
+
+            background-color: transparent;
+            color: white;
+        }
+    }
