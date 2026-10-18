@@ -1,0 +1,16 @@
+.alphabetFilter {
+        width: 45px;
+        height: 45px;
+        background-color: #9F3D3D;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+
+    img {
+        margin: 0 auto;
+        width: 35px;
+        height: 35px;
+        display: block;
+        filter: invert(1);
+    }
+}
