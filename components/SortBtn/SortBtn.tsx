@@ -1,17 +1,23 @@
 "use client";
-import styles from "../Filter/Filter.module.css";
+import styles from "./Sort.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function SortBtn() {
-    const [clicked, setClicked] = useState(false);
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    const clicked = searchParams.get("order") === "desc";
 
     function handleClick() {
-        setClicked(!clicked);
+        const params = new URLSearchParams(searchParams.toString());
+
+        params.set("order", clicked ? "asc" : "desc");
+        router.replace("?" + params.toString());
     }
 
     const imageSrc = clicked ? "/alphabet-sort-2.svg" : "/alphabet-sort-1.svg";
-    const altText = clicked ? "sort Z to A" : "sort A to Z"; 
+    const altText = clicked ? "sort z to a" : " sort a to z";
 
     return(
         <button className={styles.alphabetFilter} onClick={handleClick}>
