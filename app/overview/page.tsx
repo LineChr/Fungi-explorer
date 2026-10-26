@@ -3,11 +3,13 @@ import styles from "./page.module.css"
 import Card, { type Specie } from "../../components/Card/Card"
 import SortBtn from "../../components/SortBtn/SortBtn";
 import SearchInput from "../../components/SearchInput/SearchInput";
+import Pagination from "@/components/Pagination/Pagination";
 
 type Species = Specie[];
 
-export default async function OverviewPage({ searchParams }: { searchParams: Promise<{ q?: string; order?: string}>}) {
-    const { q = "", order = "asc" } = await searchParams;
+export default async function OverviewPage({ searchParams }: { searchParams: Promise<{ q?: string; order?: string; page?: string }>}) {
+    const { q = "", order = "asc", page = "1" } = await searchParams;
+    const itemsPerPage = 12;
 
     const response = await fetch("https://raw.githubusercontent.com/jrowinski3d/mushroom-tracker-data-cdn/main/manifest.json")
 
@@ -27,6 +29,10 @@ export default async function OverviewPage({ searchParams }: { searchParams: Pro
         order === "desc" ? b.common_name.localeCompare(a.common_name) : a.common_name.localeCompare(b.common_name)
     );
 
+    const currentPage = Number(page);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const paginatedSpecies = sorted.slice(startIndex, startIndex + itemsPerPage);
+
     return(
         <>
             <div className={styles.filterContainer}>
@@ -35,11 +41,12 @@ export default async function OverviewPage({ searchParams }: { searchParams: Pro
             </div>
             <section className={styles.container}>
                 {
-                    sorted.map(specie =>(
+                    paginatedSpecies.map(specie =>(
                         <Card key={specie.mushroom_id} specie={specie}/>
                     ))
                 }
             </section>
+            <Pagination totalCount={sorted.length} itemsPerPage={itemsPerPage}/>
         </>
     )
 }
