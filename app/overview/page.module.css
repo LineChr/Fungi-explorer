@@ -14,3 +14,10 @@
     margin: 0 auto;  
     gap: 20px;
 }
+
+.errorMsg {
+    width: 100%;
+    font-family: var(--font-inter);
+    color: white;
+    grid-column: 2;
+}
