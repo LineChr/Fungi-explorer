@@ -23,7 +23,12 @@
         text-align: center;
     }
 
-    button {
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        
         width: 15.625rem;
         height: 3.125rem;
 
@@ -40,9 +45,9 @@
         box-shadow: 0 7px 0 #5B1111;
     }
 
-    button:hover {
+    .button:hover {
         cursor: pointer;
-        transform: translateY(7);
+        transform: translateY(7px);
         box-shadow: none;
     }
 }
