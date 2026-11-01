@@ -1,0 +1,40 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 70%;
+
+    gap: 1.2rem;
+    padding: 10rem 0;
+
+    font-family: var(--font-inter);
+    color: white;
+    
+    h1 {
+        text-transform: capitalize;
+        font-family: var(--font-chicle);
+        font-size: 4rem;
+    }
+
+    p {
+       font-size: 1.5rem; 
+    }
+}
+
+@media (max-width: 430px) {
+
+    .container {
+        width: 80%;
+        padding: 3rem 0;
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}

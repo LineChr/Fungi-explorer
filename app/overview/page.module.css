@@ -12,7 +12,7 @@
     padding: 20px 0 20px 0;
     width: 90%;
     margin: 0 auto;  
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .errorMsg {
@@ -20,4 +20,65 @@
     font-family: var(--font-inter);
     color: white;
     grid-column: 2;
+}
+
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 2rem;
+
+    p {
+        color: white;
+        font-family: var(--font-inter);
+    }
+}
+
+.spinner {
+    width: 2rem;
+    height: 2rem;
+    border: .3125rem solid white;
+    border-top: .3125rem solid #9F3D3D;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+
+
+@media (max-width: 1100px) {
+
+    .container {
+    grid-template-columns: repeat(2, 1fr);
+
+   }
+}
+
+
+@media (max-width: 740px) {
+
+    .container {
+    grid-template-columns: repeat(1, 1fr);
+
+   }
+}
+
+@media (max-width: 430px) {
+
+    .filterContainer {
+        gap: 0.5rem;
+        justify-content: center;
+    }
 }

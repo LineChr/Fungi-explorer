@@ -36,3 +36,18 @@
         transform: scale(1.05);
     }
 }
+
+
+@media (max-width: 430px) {
+
+.headerContainer {
+    nav {
+        gap: 2rem;
+    }
+
+    a {
+        font-size: 1.2rem;
+    }
+}
+  
+}

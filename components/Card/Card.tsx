@@ -21,7 +21,7 @@ export default function Card({specie, common_name}: {specie: Specie; common_name
     return(
         <Link href={`/species/${specie.mushroom_id}`} className={styles.cardLink}>
             <article className={styles.specieCard}>
-                <Image src={specie.images[0].url} width={300} height={300} alt=""/>
+                <Image src={specie.images[0].url} width={300} height={300} alt={common_name}/>
                 <div className={styles.specieNames}>
                     <h1>{common_name}</h1>
                     <h2>{specie.scientific_name}</h2>
