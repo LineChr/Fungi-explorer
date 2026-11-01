@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    padding: 200px 0;
+    padding: 12.5rem 0;
     color: white;
     width: 70%;
     gap: 20px;
@@ -23,7 +23,12 @@
         text-align: center;
     }
 
-    button {
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        
         width: 15.625rem;
         height: 3.125rem;
 
@@ -40,9 +45,9 @@
         box-shadow: 0 7px 0 #5B1111;
     }
 
-    button:hover {
+    .button:hover {
         cursor: pointer;
-        transform: translateY(7);
+        transform: translateY(7px);
         box-shadow: none;
     }
 }
@@ -69,8 +74,16 @@
             font-size: 6rem;
         }
         p {
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
     }
 }   
-    
+
+@media (max-width: 430px) {
+
+    .container {
+        padding: 6rem 0;
+        width: 80%;
+    }
+
+}
