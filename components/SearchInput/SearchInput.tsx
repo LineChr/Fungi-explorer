@@ -9,7 +9,7 @@ export default function SearchInput() {
     return (
         <div className={styles.searchFilter}>
                 <Image src="/search.svg" width={30} height={30} alt=""/>
-                <input type="search" autoComplete="off" placeholder="search..." onChange={(e) => router.replace("?q=" + e.target.value)}/>
+                <input type="search" autoComplete="off" placeholder="search..." aria-label="search for mushrooms" onChange={(e) => router.replace("?q=" + e.target.value)}/>
         </div>
     )
 }

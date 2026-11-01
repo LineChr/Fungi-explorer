@@ -59,7 +59,7 @@ export default function CardDetails({ details } : {details: SpecieDetails}) {
             </section>
 
             <section className={styles.rightSection}>
-                <Image src={getImageUrl(details.images[0].source_url)} width={300} height={300} alt=""/>
+                <Image src={getImageUrl(details.images[0].source_url)} width={300} height={300} alt={details.common_name}/>
                 <div className={styles.regionsContainer}>
                     <h3>regions</h3>
                     <ul>{details.regions.map((region) =>

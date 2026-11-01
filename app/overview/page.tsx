@@ -15,7 +15,7 @@ export default async function OverviewPage({ searchParams }: { searchParams: Pro
     const response = await fetch("https://raw.githubusercontent.com/jrowinski3d/mushroom-tracker-data-cdn/main/manifest.json")
 
     if(!response.ok) {
-        notFound();
+        throw new Error("Failed to fetch mushroom data");
     }
 
     const data = await response.json();
@@ -24,6 +24,10 @@ export default async function OverviewPage({ searchParams }: { searchParams: Pro
     const cardDetails = await Promise.all(
         species.map(async (specie) => {
             const response = await fetch(specie.metadata_url);
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch mushroom details");
+            }
             const details: SpecieDetails = await response.json();
 
             return{
